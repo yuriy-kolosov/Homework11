@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+//
         System.out.println("Домашнее задание 11");
         System.out.println();
 //
@@ -49,7 +50,69 @@ public class Main {
         System.out.print("Год " + year + " - ");
         checkYear = checkYearBissextile(year);
         printCheckYearBissextile(checkYear);
+//
+        System.out.println();
+        System.out.println("          Задача 11-2");
+        int typeOs;
+        int issueYear;
+//
+        System.out.println();
+        System.out.println("        Проверка 11-2-1");
+        typeOs = 0;
+        issueYear = 2014;
+        System.out.println("Исходные параметры - " + typeOs + ", " + issueYear);
+        checkOsApp(typeOs, issueYear);
+//
+        System.out.println();
+        System.out.println("        Проверка 11-2-2");
+        typeOs = 0;
+        issueYear = 2016;
+        System.out.println("Исходные параметры - " + typeOs + ", " + issueYear);
+        checkOsApp(typeOs, issueYear);
+//
+        System.out.println();
+        System.out.println("        Проверка 11-2-3");
+        typeOs = 1;
+        issueYear = 2011;
+        System.out.println("Исходные параметры - " + typeOs + ", " + issueYear);
+        checkOsApp(typeOs, issueYear);
+//
+        System.out.println();
+        System.out.println("        Проверка 11-2-4");
+        typeOs = 1;
+        issueYear = 2019;
+        System.out.println("Исходные параметры - " + typeOs + ", " + issueYear);
+        checkOsApp(typeOs, issueYear);
+//
+        System.out.println();
+        System.out.println("          Задача 11-3");
+        int deliveryDistance = 5;
+//
+        System.out.println();
+        System.out.println("        Проверка 11-3-1");
+        deliveryDistance = 5;
+        System.out.println("Расстояние = " + deliveryDistance + " км");
+        checkDistance(deliveryDistance);
+//
+        System.out.println();
+        System.out.println("        Проверка 11-3-2");
+        deliveryDistance = 23;
+        System.out.println("Расстояние = " + deliveryDistance + " км");
+        checkDistance(deliveryDistance);
+//
+        System.out.println();
+        System.out.println("        Проверка 11-3-3");
+        deliveryDistance = 87;
+        System.out.println("Расстояние = " + deliveryDistance + " км");
+        checkDistance(deliveryDistance);
+//
+        System.out.println();
+        System.out.println("        Проверка 11-3-4");
+        deliveryDistance = 102;
+        System.out.println("Расстояние = " + deliveryDistance + " км");
+        checkDistance(deliveryDistance);
     }
+
     public static int checkYearBissextile(int y) { //Проверка на високосный год
 //
         int yearBissextile = -1; // Год не определен
@@ -78,5 +141,27 @@ public class Main {
             default:
                 System.out.println("не определён");
         }
+    }
+
+    public static void checkOsApp(int tOs, int iYear) { // Проверка типа приложения для установки
+        int clientDeviceYear = 2015;
+        if (tOs == 1) { // Тип Android
+            if (iYear >= 2015) {
+                System.out.println("Установите версию приложения для Android по ссылке");
+            } else System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (iYear >= 2015) { // Тип iOS
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+    }
+
+    public static void checkDistance(int Dist) { // Проверка дистанции для доставки
+//
+        if (Dist <= 100) {
+            if (Dist > 60) {
+                System.out.println("Время доставки = 3 суток");
+            } else if (Dist > 20) {
+                System.out.println("Время доставки = 2 суток");
+            } else System.out.println("Время доставки = 1 сутки");
+        } else System.out.println("Доставки нет");
     }
 }
