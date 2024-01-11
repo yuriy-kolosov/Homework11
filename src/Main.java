@@ -86,31 +86,40 @@ public class Main {
 //
         System.out.println();
         System.out.println("          Задача 11-3");
-        int deliveryDistance = 5;
+        int deliveryDistance;
+        int deliveryTime;
 //
         System.out.println();
         System.out.println("        Проверка 11-3-1");
         deliveryDistance = 5;
-        System.out.println("Расстояние = " + deliveryDistance + " км");
-        checkDistance(deliveryDistance);
+        System.out.println("Расстояние (км) = " + deliveryDistance);
+        deliveryTime = checkDistance(deliveryDistance);
+        if (deliveryTime > 0) System.out.println("Время доставки (сутки) = " + deliveryTime);
+        else System.out.println("Доставки нет");
 //
         System.out.println();
         System.out.println("        Проверка 11-3-2");
         deliveryDistance = 23;
-        System.out.println("Расстояние = " + deliveryDistance + " км");
-        checkDistance(deliveryDistance);
+        System.out.println("Расстояние (км) = " + deliveryDistance);
+        deliveryTime = checkDistance(deliveryDistance);
+        if (deliveryTime > 0) System.out.println("Время доставки (сутки) = " + deliveryTime);
+        else System.out.println("Доставки нет");
 //
         System.out.println();
         System.out.println("        Проверка 11-3-3");
         deliveryDistance = 87;
-        System.out.println("Расстояние = " + deliveryDistance + " км");
-        checkDistance(deliveryDistance);
+        System.out.println("Расстояние (км) = " + deliveryDistance);
+        deliveryTime = checkDistance(deliveryDistance);
+        if (deliveryTime > 0) System.out.println("Время доставки (сутки) = " + deliveryTime);
+        else System.out.println("Доставки нет");
 //
         System.out.println();
         System.out.println("        Проверка 11-3-4");
         deliveryDistance = 102;
-        System.out.println("Расстояние = " + deliveryDistance + " км");
-        checkDistance(deliveryDistance);
+        System.out.println("Расстояние (км) = " + deliveryDistance);
+        deliveryTime = checkDistance(deliveryDistance);
+        if (deliveryTime > 0) System.out.println("Время доставки (сутки) = " + deliveryTime);
+        else System.out.println("Доставки нет");
     }
 
     public static int checkYearBissextile(int y) { //Проверка на високосный год
@@ -154,14 +163,14 @@ public class Main {
         } else System.out.println("Установите облегченную версию приложения для iOS по ссылке");
     }
 
-    public static void checkDistance(int Dist) { // Проверка дистанции для доставки
+    public static int checkDistance(int Dist) { // Проверка расстояния для доставки
+        int dTime = -1;
 //
         if (Dist <= 100) {
-            if (Dist > 60) {
-                System.out.println("Время доставки = 3 суток");
-            } else if (Dist > 20) {
-                System.out.println("Время доставки = 2 суток");
-            } else System.out.println("Время доставки = 1 сутки");
-        } else System.out.println("Доставки нет");
+            if (Dist > 60) dTime = 3;
+            else if (Dist > 20) dTime = 2;
+            else dTime = 1;
+        }
+        return dTime; // Время доставки в сутках
     }
 }
